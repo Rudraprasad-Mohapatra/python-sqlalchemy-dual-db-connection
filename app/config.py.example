@@ -1,0 +1,16 @@
+# app/config.py.example
+
+class Config:
+    SECRET_KEY = 'your_secret_key'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI_FIRST = 'your_first_db_dev_url'
+    SQLALCHEMY_DATABASE_URI_SECOND = 'your_second_db_dev_url'
+
+class ProductionConfig(Config):
+    DEBUG = False
+    SQLALCHEMY_DATABASE_URI_FIRST = 'your_first_db_prod_url'
+    SQLALCHEMY_DATABASE_URI_SECOND = 'your_second_db_prod_url'
+    # Add other production-specific configurations here
